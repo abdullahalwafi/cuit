@@ -18,15 +18,24 @@
      @csrf
      <div class="mb-4">
        <label class="block text-sm mb-1">Name</label>
-       <input type="text" name="name" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500" placeholder="you@example.com" />
+       <input type="text" name="name" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500"/>
+       @error('name')
+           <p style="color: red">{{ $message }}</p>
+       @enderror
      </div>
      <div class="mb-4">
        <label class="block text-sm mb-1">Email or Username</label>
        <input type="text" name="email" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500" placeholder="you@example.com" />
+       @error('email')
+           <p style="color: red">{{ $message }}</p>
+       @enderror
      </div>
       <div class="mb-4">
         <label class="block text-sm mb-1">Password</label>
         <input type="password" name="password" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500" placeholder="********" />
+        @error('password')
+           <p style="color: red">{{ $message }}</p>
+       @enderror
       </div>
       <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition">Registerx</button>
     </form>
