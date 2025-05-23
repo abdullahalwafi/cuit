@@ -10,7 +10,7 @@
 
 <body class="bg-gray-100 text-gray-800">
 
-    @if (Auth::user() != null) 
+    @if (Auth::user() != null)
         <div class="w-[50%] mx-auto py-10">
             {{ Auth::user()->name }} <br>
             <a href="{{ route('logout') }}">logout</a>
