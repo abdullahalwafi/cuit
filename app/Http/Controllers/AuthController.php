@@ -29,4 +29,17 @@ class AuthController extends Controller
     {
         return view("register");
     }
+
+    public function registerPost(Request $request)
+    {
+        $data = $request->validate([
+            "name" => "required|min:3|max:150",
+            "email" => "required",
+            "password" => "required",
+        ]);
+
+        User::create($data);
+
+        return redirect("/login");
+    }
 }
