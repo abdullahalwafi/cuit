@@ -20,6 +20,13 @@ class AuthController extends Controller
             $user = User::where("email", $request->email)->first();
             Auth::login($user);
             return redirect('/');
+        } else {
+            return redirect()->back()->with("error", "login error");
         }
+    }
+
+    public function register()
+    {
+        return view("register");
     }
 }

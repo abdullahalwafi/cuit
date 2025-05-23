@@ -11,7 +11,9 @@
 
   <div class="w-full max-w-md bg-white rounded-xl shadow-lg p-8">
     <h2 class="text-2xl font-bold text-center text-blue-600 mb-6">Welcome Back</h2>
-    
+    @if (session("error"))
+        <p style="color: red">{{ session("error") }}</p>
+    @endif
     <form method="POST">
      @csrf
       <div class="mb-4">
